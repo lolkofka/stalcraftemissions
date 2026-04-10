@@ -2,11 +2,11 @@ import aiohttp
 
 
 class StalcraftAPI:
-    def __init__(self, client_id, client_secret, url="https://eapi.stalcraft.net/",
+    def __init__(self, client_id, client_secret, auth_token, url="https://eapi.stalcraft.net/",
                  debug=False,
                  stalcraft_status_key=None,
                  stalcraft_status_url='https://stalcraft-status.ru/',
-                 demo_url='https://dapi.stalcraft.net/',
+                 demo_url='https://dapi.stalcraft.net/'
                  ):
         self.__api_url = url if not debug else demo_url
         self.client_id = client_id
@@ -14,7 +14,7 @@ class StalcraftAPI:
         self.debug = debug
         self.stalcraft_status_key = stalcraft_status_key
         self.stalcraft_status_url = stalcraft_status_url
-        self.appToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwibmJmIjoxNjczNzk3ODM4LCJleHAiOjQ4MjczOTc4MzgsImlhdCI6MTY3Mzc5NzgzOCwianRpIjoiYXhwbzAzenJwZWxkMHY5dDgzdzc1N2x6ajl1MmdyeHVodXVlb2xsZ3M2dml1YjVva3NwZTJ3eGFrdjJ1eWZxaDU5ZDE2ZTNlN2FqdW16Z3gifQ.ZNSsvwAX72xT5BzLqqYABuH2FGbOlfiXMK5aYO1H5llG51ZjcPvOYBDRR4HUoPZVLFY8jyFUsEXNM7SYz8qL9ePmLjJl6pib8FEtqVPmf9ldXvKkbaaaSp4KkJzsIEMY_Z5PejB2Vr-q-cL13KPgnLGUaSW-2X_sHPN7VZJNMjRgjw4mPiRZTe4CEpQq0BEcPrG6OLtU5qlZ6mLDJBjN2xtK0DI6xgmYriw_5qW1mj1nqF_ewtUiQ1KTVhDgXnaNUdkGsggAGqyicTei0td6DTKtnl3noD5VkipWn_CwSqb2Mhm16I9BPfX_d5ARzWrnrwPRUf6PA_7LipNU6KkkW0mhZfmwEPTm_sXPus0mHPENoVZArdFT3L5sOYBcpqwvVIEtxRUTdcsKp-y-gSzao5muoyPVoCc2LEeHEWx0cIi9spsZ46SPRQpN4baVFp7y5rp5pjRsBKHQYUJ0lTmh1_vyfzOzbtNN2v6W_5w9JTLrN1U6fhmifvKHppFSEqD6DameL1TC59kpIdufRkEU9HE4O-ErEf1GuJFRx-Dew6XDvb_ExhvEqcw31yNvKzpVqLYJfLazqn6tUbVuAiPwpy6rP9tYO2taT1vj5TGn_vxwDu9zoLWe796tFMPS-kmbCglxB5C9L4EbpfWNbWxYjUkTvjT2Ml9OnrB0UbYo1jI'
+        self.appToken = auth_token
         self.authHeader = {"Authorization": f"Bearer {self.appToken}"}
         self.session = aiohttp.ClientSession()
 

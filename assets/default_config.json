@@ -1,6 +1,6 @@
 {
     "bot": {
-        "mongo": "mongodb://localhost:27017",
+        "mongo": "mongodb://mongo:27017",
         "database": "stalcraft_emissions",
         "token": "bot token from https://t.me/BotFather",
         "debug": true,
@@ -9,7 +9,8 @@
     "stalcraft_api": {
         "client_id": 123,
         "client_secret": "stalcraft_api_secret_key",
-        "stalcraft_status_key": "https://stalcraft-status.ru/"
+        "stalcraft_status_key": "https://stalcraft-status.ru/",
+        "auth_token": "stalcraft_api_auth_token"
     },
     "groups": {
         "NA": "@test",
