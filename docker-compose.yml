@@ -23,8 +23,6 @@ services:
     image: mongo:7
     container_name: stalemiss-mongo
     restart: unless-stopped
-    ports:
-      - "27015:27017"
     volumes:
       - mongo_data:/data/db
     healthcheck:

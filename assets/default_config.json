@@ -4,7 +4,8 @@
         "database": "stalcraft_emissions",
         "token": "bot token from https://t.me/BotFather",
         "debug": true,
-        "update_time_sec": 7
+        "update_time_sec": 7,
+        "proxy": "http://user:pass@ip:port"
     },
     "stalcraft_api": {
         "client_id": 123,
